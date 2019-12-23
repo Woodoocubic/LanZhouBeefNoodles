@@ -12,16 +12,6 @@ namespace LanzhouBeefNoodles.controllers
     public class HomeController : Controller
     {
         // GET: /<controller>/
-        //[Route("[action]")]
-        public String Index()
-        {
-            return "Hello From Home";
-        }
 
-        //[Route("[action]")]
-        public String About()
-        {
-            return "Hello from About";
-        }
     }
 }
