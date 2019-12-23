@@ -8,12 +8,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LanzhouBeefNoodles.controllers
 {
+    [Route("Home")]
     public class HomeController : Controller
     {
         // GET: /<controller>/
+        [Route("Index")]
         public String Index()
         {
             return "Hello From Home";
+        }
+
+        [Route("AboutUs")]
+        public String About()
+        {
+            return "Hello from About";
         }
     }
 }
