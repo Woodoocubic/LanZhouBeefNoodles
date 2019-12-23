@@ -19,6 +19,8 @@ namespace LanzhouBeefNoodles
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Request Pipeline(check and deal with http request)
+        // Middleware: logging static files MVC(shortcut deal)
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -26,10 +28,16 @@ namespace LanzhouBeefNoodles
                 app.UseDeveloperExceptionPage();
             }
 
+            app.Map("/test", build =>
+            {
+                build.Run(async context => { await context.Response.WriteAsync("Hello from Test"); });
+            });
+
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
+            //wont run the following code...
         }
     }
 }
