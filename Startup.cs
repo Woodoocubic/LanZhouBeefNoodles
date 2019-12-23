@@ -27,7 +27,11 @@ namespace LanzhouBeefNoodles
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(route =>
+            {
+                route.MapRoute("default", "{controller=Home}/{action=Index}/{id?}"); 
+                // {domain}/noodles/list
+            });
 
             app.Run(async (context) =>
             {

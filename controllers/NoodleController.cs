@@ -8,20 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LanzhouBeefNoodles.controllers
 {
-    //[Route("[controller]")]
-    public class HomeController : Controller
+    public class NoodleController : Controller
     {
         // GET: /<controller>/
-        //[Route("[action]")]
-        public String Index()
+        public IList<String> Index()
         {
-            return "Hello From Home";
-        }
-
-        //[Route("[action]")]
-        public String About()
-        {
-            return "Hello from About";
+            return new List<string>{"Beef Noodles", "Lamb Noodles", "Egg Noodles"};
         }
     }
 }
