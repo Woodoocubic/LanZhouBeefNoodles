@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LanzhouBeefNoodles.controllers
 {
+    [Route("admin/[controller]/[action]")]
     public class UserController : Controller
     {
         // GET: /<controller>/
