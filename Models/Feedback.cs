@@ -27,7 +27,7 @@ namespace LanzhouBeefNoodles.Models
         [StringLength(400, ErrorMessage = "cannot exceed 400 characters")]
         public string Message { get; set; }
 
-        public DateTime CreateDateUTC { get; set; }
+        public DateTime CreateDateUtc { get; set; }
     }
 
 }

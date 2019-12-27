@@ -9,12 +9,12 @@ namespace LanzhouBeefNoodles.Models
     {
         public static void Seed(AppDbContext context)
         {
-            if (context.Noodles.Any())
+            if (context.Noodles.Any() && context.Feedbacks.Any())
             {
                 return;
             }
 
-            context.AddRange
+            context.Noodles.AddRange
             (
                 new Noodle { Name = "毛细", Price = 12, ShortDescription = "如发丝般细", LongDescription = "真的好细好细好细啊", ImageUrl = "/images/毛细.png" },
                 new Noodle { Name = "细", Price = 10, ShortDescription = "普通细", LongDescription = "还是挺细的", ImageUrl = "/images/细.png" },
@@ -26,6 +26,14 @@ namespace LanzhouBeefNoodles.Models
                 new Noodle { Name = "大宽", Price = 10, ShortDescription = "裤带面", LongDescription = "比嘴还宽了", ImageUrl = "/images/大宽.png" },
                 new Noodle { Name = "荞麦棱子", Price = 15, ShortDescription = "立方体的", LongDescription = "好像知道师傅怎么拉出来的", ImageUrl = "/images/荞麦棱子.png" },
                 new Noodle { Name = "一窝丝", Price = 15, ShortDescription = "这是啥", LongDescription = "我也没吃过", ImageUrl = "/images/一窝丝.png" }
+            );
+
+            context.Feedbacks.AddRange
+            (
+                new Feedback { Id = 1, Name = "阿莱克斯", Email = "noname@hotmail.com", Message = "真的好细好细好细啊", CreateDateUtc = DateTime.UtcNow },
+                new Feedback { Id = 2, Name = "莱克斯", Email = "noname@hotmail.com", Message = "还是挺细的", CreateDateUtc = DateTime.UtcNow },
+                new Feedback { Id = 3, Name = "克斯", Email = "noname@hotmail.com", Message = "比细的粗点，比二细细点", CreateDateUtc = DateTime.UtcNow },
+                new Feedback { Id = 4, Name = "克斯", Email = "noname@hotmail.com", Message = "粗的才有嚼劲", CreateDateUtc = DateTime.UtcNow }
             );
             context.SaveChanges();
         }
