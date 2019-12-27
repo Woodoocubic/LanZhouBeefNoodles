@@ -1,0 +1,21 @@
+﻿@model LanzhouBeefNoodles.Models.Noodle
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+    <header>Detail</header>
+
+<div>
+    <h1>@Model.Name</h1>
+</div>
+
+<div class="thumbnail">
+    <img class="thumbnail" src="@Model.ImageUrl" alt="111"/>
+    <div class="caption-full">
+        <h3 class="pull-right">$ @Model.Price</h3>
+        <h3> @Model.Name </h3>
+        <h4> @Model.ShortDescription</h4>
+        <p> @Model.LongDescription </p>
+    </div>
+</div>
