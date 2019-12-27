@@ -4,9 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using LanzhouBeefNoodles.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LanzhouBeefNoodles.Controllers
 {
+    [Authorize]
     public class FeedbackController : Controller
     {
         private IFeedbackRepository _feedbackRepository;

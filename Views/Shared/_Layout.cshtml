@@ -13,16 +13,18 @@
             <ul class="nav navbar-nav">
                 <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">Very Good Noodles</a></li>
                 <li><a asp-controller="Feedback" asp-action="Index">Feedback</a></li>
+                <partial name="_LoginPartial"/>
             </ul>
         </div>
     </div>
 </nav>
 
 <body>
-    <div class="container body-content">
-        <div class="row">
-            @RenderBody()
-        </div>
+<div class="container body-content">
+    <div class="row">
+        @RenderBody()
     </div>
+</div>
 </body>
+@RenderSection("Scripts", required:false);
 </html>
