@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace LanzhouBeefNoodles.Models
 {
@@ -9,7 +10,7 @@ namespace LanzhouBeefNoodles.Models
     {
         public static void Seed(AppDbContext context)
         {
-            if (context.Noodles.Any() && context.Feedbacks.Any())
+            if (context.Feedbacks.Any() && context.Noodles.Any())
             {
                 return;
             }
@@ -27,13 +28,12 @@ namespace LanzhouBeefNoodles.Models
                 new Noodle { Name = "荞麦棱子", Price = 15, ShortDescription = "立方体的", LongDescription = "好像知道师傅怎么拉出来的", ImageUrl = "/images/荞麦棱子.png" },
                 new Noodle { Name = "一窝丝", Price = 15, ShortDescription = "这是啥", LongDescription = "我也没吃过", ImageUrl = "/images/一窝丝.png" }
             );
-
             context.Feedbacks.AddRange
             (
-                new Feedback { Id = 1, Name = "阿莱克斯", Email = "noname@hotmail.com", Message = "真的好细好细好细啊", CreateDateUtc = DateTime.UtcNow },
-                new Feedback { Id = 2, Name = "莱克斯", Email = "noname@hotmail.com", Message = "还是挺细的", CreateDateUtc = DateTime.UtcNow },
-                new Feedback { Id = 3, Name = "克斯", Email = "noname@hotmail.com", Message = "比细的粗点，比二细细点", CreateDateUtc = DateTime.UtcNow },
-                new Feedback { Id = 4, Name = "克斯", Email = "noname@hotmail.com", Message = "粗的才有嚼劲", CreateDateUtc = DateTime.UtcNow }
+                new Feedback { Name = "阿莱克斯", Email = "noname@hotmail.com", Message = "真的好细好细好细啊", CreateDateUtc = DateTime.UtcNow },
+                new Feedback { Name = "莱克斯", Email = "noname@hotmail.com", Message = "还是挺细的", CreateDateUtc = DateTime.UtcNow },
+                new Feedback { Name = "克斯", Email = "noname@hotmail.com", Message = "比细的粗点，比二细细点", CreateDateUtc = DateTime.UtcNow },
+                new Feedback { Name = "克斯", Email = "noname@hotmail.com", Message = "粗的才有嚼劲", CreateDateUtc = DateTime.UtcNow }
             );
             context.SaveChanges();
         }
